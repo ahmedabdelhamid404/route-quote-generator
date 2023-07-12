@@ -1,30 +1,36 @@
+// Declaring Variables
 var quoteIMage = document.getElementById("qouteImage");
 var qouteContent = document.getElementById("qouteText");
 var qouteAuthor = document.getElementById("qouteAuthor");
 var usedIndexes = []
 
+// This function generate random numbers from 0 to 10 according to quotes array of objects
 function gettingIndex() {
     var index = Math.floor(Math.random()*quotes.length);
     return index;
 }
 
+// function that call gettingindex() function also it checks wether the quote was previewed previously or through the usedIndexes array i call it once when the page run for the first time also i call it using onclick event
 function newQuote() {
+    // calling the index generator function
     var index = gettingIndex();
+    // checking whether the quote was previewed previously or not if yes it still looping try to get new index
     while(usedIndexes.includes(index)) {
         index = gettingIndex();
     }
+    // push the new generated index into the array to check on it next time i call the function
     usedIndexes.push(index);
-    console.log(usedIndexes);
+    // to check of the indexes was already all previewed or not if yes it clear all the checking array to start all over again but leaving only the last index in the array to prevent preview it once again
     if(usedIndexes.length == quotes.length) {
         usedIndexes.splice(0,quotes.length-1);
     }
-    console.log(usedIndexes);
     quoteIMage.src = quotes[index].source;
     quoteIMage.alt = quotes[index].alternate;
     qouteContent.innerHTML = quotes[index].quoteText;
     qouteAuthor.innerHTML = quotes[index].author;
 }
 
+// array of objects for quotes including images src, alt, text & authors
 var quotes = [
     {
         author: '― Oscar Wilde',
@@ -88,4 +94,5 @@ var quotes = [
     }
 ]
 
+// the initial call for the function when the page first run
 newQuote();
