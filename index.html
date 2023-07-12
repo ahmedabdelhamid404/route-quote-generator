@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quote Generator</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bacasime+Antique&family=Nunito:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- FontsAwesome Link -->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <!-- Bootstrap Link -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- Main CSS Style Link -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Media Query Link -->
+    <link rel="stylesheet" href="css/media.css">
+
+    <link rel="shortcut icon" href="images/quotes.png" type="image/x-icon" />
+  </head>
+  <body>
+    <div
+      class="container d-flex align-items-center justify-content-center vh-100 text-center">
+      <div 
+        class="quote-body bg-danger bg-white bg-opacity-50 rounded rounded-4 shadow w-75 py-5 px-3 d-flex flex-column justify-content-between">
+        <picture class="d-block w-10 mx-auto mb-2">
+          <img class="rounded-circle w-100" id="qouteImage" src="" alt="">
+        </picture>
+        <h2>
+          <i class="fa-solid fa-quote-left fa-2x me-2"></i>
+          <span class="quote-text" id="qouteText"></span>
+        </h2>
+        <p class="author text-secondary text-opacity-50" id="qouteAuthor"></p>
+        <button class="btn btn-outline-dark mx-auto" onclick="newQuote()">New Quote</button>
+      </div>
+    </div>
+
+    <script src="js/index.js"></script>
+  </body>
+</html>
